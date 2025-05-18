@@ -94,10 +94,10 @@ export function Home({ teamData, user }: { teamData: TeamDataWithMembers , user:
       color: 'text-green-500'
     },
     {
-      title: 'Team',
-      description: 'Manage team members and their roles',
-      icon: Users,
-      href: '/dashboard/team',
+      title: 'Contracts',
+      description: 'Write custome contracts for your clients',
+      icon: FileText,
+      href: '/dashboard/contracts',
       color: 'text-purple-500'
     },
     {
@@ -132,7 +132,7 @@ export function Home({ teamData, user }: { teamData: TeamDataWithMembers , user:
           return (
             <Card 
               key={item.title}
-              className="hover:shadow-lg transition-shadow cursor-pointer"
+              className="hover:shadow-lg transition-shadow dark:shadow-[#282828] cursor-pointer"
               onClick={() => router.push(item.href)}
             >
               <CardHeader>
