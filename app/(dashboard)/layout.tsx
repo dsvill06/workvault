@@ -50,11 +50,11 @@ function UserMenu() {
     <DropdownMenu open={isMenuOpen} onOpenChange={setIsMenuOpen}>
       <DropdownMenuTrigger>
         <Avatar className="cursor-pointer size-9">
-          <AvatarImage alt={user.name || ''} />
+          <AvatarImage alt={user.fullName || ''} />
           <AvatarFallback>
             {user.email
               .split(' ')
-              .map((n) => n[0])
+              .map((n:any) => n[0])
               .join('')}
           </AvatarFallback>
         </Avatar>
@@ -82,7 +82,7 @@ function UserMenu() {
 function Header() {
   return (
     <header className="border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <div className=" mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center">
           <CircleIcon className="h-6 w-6 text-orange-500" />
           <span className="ml-2 text-xl font-semibold text-gray-900">ACME</span>

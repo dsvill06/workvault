@@ -32,7 +32,7 @@ export async function getUser() {
   if (user.length === 0) {
     return null;
   }
-
+  console.log(user[0])
   return user[0];
 }
 
@@ -90,7 +90,7 @@ export async function getActivityLogs() {
       action: activityLogs.action,
       timestamp: activityLogs.timestamp,
       ipAddress: activityLogs.ipAddress,
-      userName: users.name,
+      userName: users.fullName,
     })
     .from(activityLogs)
     .leftJoin(users, eq(activityLogs.userId, users.id))
@@ -112,7 +112,7 @@ export async function getTeamForUser(userId: number) {
                   user: {
                     columns: {
                       id: true,
-                      name: true,
+                      fullName: true,
                       email: true,
                     },
                   },

@@ -20,8 +20,8 @@ export function Settings({ teamData }: { teamData: TeamDataWithMembers }) {
     FormData
   >(removeTeamMember, { error: '', success: '' });
 
-  const getUserDisplayName = (user: Pick<User, 'id' | 'name' | 'email'>) => {
-    return user.name || user.email || 'Unknown User';
+  const getUserDisplayName = (user: Pick<User, 'id' | 'fullName' | 'email'>) => {
+    return user.fullName || user.email || 'Unknown User';
   };
 
   return (

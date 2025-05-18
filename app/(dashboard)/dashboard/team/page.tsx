@@ -1,16 +1,12 @@
 import { redirect } from 'next/navigation';
-import { Home } from './home';
+import { Settings } from './settings';
 import { getTeamForUser, getUser } from '@/lib/db/queries';
 
-export default async function DashboardHome() {
+export default async function SettingsPage() {
   const user = await getUser();
+
   if (!user) {
     redirect('/sign-in');
-  }
-  const onbarding = user.onboardingStep ? Number(user.onboardingStep): 0;
-
-  if (onbarding < 3) {
-    redirect('/onboarding');
   }
 
   const teamData = await getTeamForUser(user.id);
@@ -19,5 +15,5 @@ export default async function DashboardHome() {
     throw new Error('Team not found');
   }
 
-  return <Home teamData={teamData} user={user} />;
+  return <Settings teamData={teamData} />;
 }
