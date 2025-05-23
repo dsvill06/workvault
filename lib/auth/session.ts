@@ -1,3 +1,4 @@
+export const runtime = 'nodejs';
 import { compare, hash } from 'bcryptjs';
 import { SignJWT, jwtVerify } from 'jose';
 import { cookies } from 'next/headers';
